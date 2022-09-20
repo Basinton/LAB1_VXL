@@ -162,15 +162,15 @@ int main(void)
  80001ac:	687b      	ldr	r3, [r7, #4]
  80001ae:	2b0a      	cmp	r3, #10
  80001b0:	d109      	bne.n	80001c6 <main+0x7a>
-		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+	  	  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
  80001b2:	2120      	movs	r1, #32
  80001b4:	4808      	ldr	r0, [pc, #32]	; (80001d8 <main+0x8c>)
  80001b6:	f000 fbf9 	bl	80009ac <HAL_GPIO_TogglePin>
-		  HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
+	  	  HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
  80001ba:	2180      	movs	r1, #128	; 0x80
  80001bc:	4806      	ldr	r0, [pc, #24]	; (80001d8 <main+0x8c>)
  80001be:	f000 fbf5 	bl	80009ac <HAL_GPIO_TogglePin>
-		  count = 0;
+	  	  count = 0;
  80001c2:	2300      	movs	r3, #0
  80001c4:	607b      	str	r3, [r7, #4]
 	  }
