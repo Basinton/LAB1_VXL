@@ -90,20 +90,27 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  //Init values for 3 LEDS
   int count = 0;
   HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
   HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
   HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, RESET);
+
+  //Begin
   while (1)
   {
+	  //State 1: led green off after 3s, led yellow on
 	  if(count == 3){
 		  HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
 		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
 	  }
+	  //State 2: led yellow off after 2s, led red on
 	  if(count == 5){
 		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
 		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 	  }
+	  //State 3: led red off after 5s, led green on and reset counter
 	  if(count == 10){
 	  	  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 	  	  HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
@@ -111,6 +118,7 @@ int main(void)
 	  }
 	  count++;
 	  HAL_Delay(1000);
+	//End
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
