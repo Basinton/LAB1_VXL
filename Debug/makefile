@@ -52,6 +52,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 bai4.list \
 
+OBJCOPY_HEX += \
+bai4.hex \
+
 
 # All Target
 all: main-build
@@ -75,12 +78,17 @@ bai4.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+bai4.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "bai4.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) bai4.elf bai4.list bai4.map default.size.stdout
+	-$(RM) bai4.elf bai4.hex bai4.list bai4.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
