@@ -191,44 +191,56 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  //Init values
+  //time counter
   int count = 10;
+  //led counter
   int led_counter = 3;
+    //Traffic light init:
+    //Set is on and Reset is off
+    //Traffic light 1
     HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
     HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
     HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
 
+    //Traffic light 2
     HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, SET);
     HAL_GPIO_WritePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin, RESET);
     HAL_GPIO_WritePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin, RESET);
     while (1)
     {
+      //At traffic light 1, after 3s, green led turn off and yellow led on
   	  if(count == 7){
   		  HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
   		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
   		  led_counter = 2;
   	  }
+      //At traffic light 1, after 2s, yellow led turn off and red led on
   	  if(count == 5){
   		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
   		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
   		  led_counter = 5;
-
+      //At same time, at traffic 2, red led turn off, green led on
   		  HAL_GPIO_TogglePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin);
   		  HAL_GPIO_TogglePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin);
   	  }
+      //At traffic light 2, after 3s, green led off, yellow led on
   	  if(count == 3){
   		  HAL_GPIO_TogglePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin);
   		  HAL_GPIO_TogglePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin);
   	  }
+      //At traffic light 1, after 5s, red led turn off, green led on
   	  if(count == 0){
   	  	  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
   	  	  HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
   	  	  led_counter = 3;
-
+      //At same time, at traffic light 2, yellow led turn off, red led on
   	  	  HAL_GPIO_TogglePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin);
   	  	  HAL_GPIO_TogglePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin);
   	  	  count = 10;
   	  }
   	  count--;
+      //call display function
   	  display7SEG(led_counter);
   	  led_counter--;
   	  HAL_Delay(1000);
