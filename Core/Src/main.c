@@ -54,6 +54,7 @@ static void MX_GPIO_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void display7SEG(int counter) {
+	//led display number 0 by enable 6 ports as follow (reset state)
 	if (counter == 0) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -63,7 +64,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, SET);
 	}
-
+	//led display number 1 by enable 2 ports as follow (reset state)
 	if (counter == 1) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, SET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -73,7 +74,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, SET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, SET);
 	}
-
+	//led display number 1 by enable 5 ports as follow (reset state)
 	if (counter == 2) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -83,7 +84,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, SET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-
+	//led display number 1 by enable 5 ports as follow (reset state)
 	if (counter == 3) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -93,7 +94,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, SET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-
+	//led display number 1 by enable 4 ports as follow (reset state)
 	if (counter == 4) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, SET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -103,7 +104,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-
+	//led display number 1 by enable 5 ports as follow (reset state)
 	if (counter == 5) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, SET);
@@ -113,7 +114,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-
+	//led display number 1 by enable 6 ports as follow (reset state)
 	if (counter == 6) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, SET);
