@@ -90,6 +90,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  //init values
 	int count = 0;
 	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, RESET);
 	HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, RESET);
@@ -104,10 +105,11 @@ int main(void)
 	HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, RESET);
 	HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, RESET);
 	while (1) {
+    //In sequence, we toggle 2 leds once (except for the 1st time).
 		if (count == 0) {
 			HAL_GPIO_TogglePin(LED_12_GPIO_Port, LED_12_Pin);
 		}
-
+    //Led 12 off, led 1 on and so on.
 		if (count == 1) {
 			HAL_GPIO_TogglePin(LED_12_GPIO_Port, LED_12_Pin);
 			HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
