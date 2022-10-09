@@ -56,6 +56,7 @@ void setNumberOnClock(int num);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void clearAllClock(){
+  //In this function, we reset all led pins inorder to turn off all leds at once.
 	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, RESET);
 	HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, RESET);
 	HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, RESET);
@@ -71,7 +72,7 @@ void clearAllClock(){
 }
 
 void setNumberOnClock(int num){
-	//In this function, we set x led on due to the value of "num".
+	//In this function, we set x led on according to the value of "num".
 	if(num == 0){
 			HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, SET);
 		}
@@ -158,19 +159,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   //Init values
 	int count = 0;
-	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, RESET);
-	HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, RESET);
-	HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, RESET);
-	HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, RESET);
-	HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, RESET);
-	HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, RESET);
-	HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, RESET);
-	HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, RESET);
-	HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, RESET);
-	HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, RESET);
-	HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, RESET);
-	HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, RESET);
-
+  clearAllClock();
 	while(1){
     if(count == 12){
       count = 0;
