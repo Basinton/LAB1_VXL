@@ -74,7 +74,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, SET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, SET);
 	}
-	//led display number 1 by enable 5 ports as follow (reset state)
+	//led display number 2 by enable 5 ports as follow (reset state)
 	if (counter == 2) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -84,7 +84,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, SET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-	//led display number 1 by enable 5 ports as follow (reset state)
+	//led display number 3 by enable 5 ports as follow (reset state)
 	if (counter == 3) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -94,7 +94,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, SET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-	//led display number 1 by enable 4 ports as follow (reset state)
+	//led display number 4 by enable 4 ports as follow (reset state)
 	if (counter == 4) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, SET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -104,7 +104,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-	//led display number 1 by enable 5 ports as follow (reset state)
+	//led display number 5 by enable 5 ports as follow (reset state)
 	if (counter == 5) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, SET);
@@ -114,7 +114,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-	//led display number 1 by enable 6 ports as follow (reset state)
+	//led display number 6 by enable 6 ports as follow (reset state)
 	if (counter == 6) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, SET);
@@ -124,7 +124,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-
+	//led display number 7 by enable 3 ports as follow (reset state)
 	if (counter == 7) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -134,7 +134,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, SET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, SET);
 	}
-
+	//led display number 8 by enable 7 ports as follow (reset state)
 	if (counter == 8) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -144,7 +144,7 @@ void display7SEG(int counter) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-
+	//led display number 9 by enable 6 ports as follow (reset state)
 	if (counter == 9) {
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
