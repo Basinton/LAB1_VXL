@@ -54,6 +54,7 @@ static void MX_GPIO_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void clearAllClock(){
+	//In this function, we reset all led pins inorder to turn off all leds at once.
 	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, RESET);
 	HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, RESET);
 	HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, RESET);
@@ -69,6 +70,7 @@ void clearAllClock(){
 }
 
 void setNumberOnClock(int num){
+	//In this function, we set x led on according to the value of "num".
 	if(num == 0){
 			HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, SET);
 		}
@@ -119,6 +121,7 @@ void setNumberOnClock(int num){
 }
 
 void clearNumberOnClock(int num){
+	//In this function, we set x led off according to the value of "num".
 	if(num == 0){
 			HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, RESET);
 		}
