@@ -203,27 +203,36 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	//Init values
   	int sec = 0;
 	int min = 0;
 	int hour = 0;
+	//clear screen
 	clearAllClock();
 
 	while(1){
+		//update minute every 60 seconds
 		if(sec == 60){
 			sec = 0;
 			min++;
 		}
+		//update hour every 60 minutes
 		if(min == 60){
 			min = 0;
 			hour++;
 		}
+		//reset hour every 12 hours
 		if(hour == 12){
 			hour = 0;
 			sec++;
 		}
+		//clear all leds every second
 		clearAllClock();
+		//led displaying hour will change after each 1 hour
 		setNumberOnClock(hour);
+		//led displaying minute will change after each 5 minutes
 		setNumberOnClock(min/5);
+		//led displaying second will change after each 5 seconds
 		setNumberOnClock(sec/5);
 		sec++;
 		HAL_Delay(1000);
